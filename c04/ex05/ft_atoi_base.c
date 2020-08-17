@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seougjun <seougjun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 17:24:01 by seougjun          #+#    #+#             */
-/*   Updated: 2020/08/17 19:40:24 by seougjun         ###   ########.fr       */
+/*   Updated: 2020/08/18 00:37:24 by seongjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@ int		invalid_base(char *base);
 int		ft_len(char *str);
 int		ft_space(char c);
 int		ft_sign(char c);
-int		ft_num(char c);
-int		ft_putnbr_base(int n, char *base);
-int		ft_putnber_base_rec(int n, char *base, int r);
+int		ft_match(char c, char *base);
 
 int		ft_atoi_base(char *str, char *base)
 {
 	int n;
 	int sign;
 	int r;
+	int tmp;
 
 	sign = 1;
 	n = 0;
@@ -37,7 +36,28 @@ int		ft_atoi_base(char *str, char *base)
 			sign *= -1;
 		str++;
 	}
-	ft_putnbr_base();
+	while (ft_match(*str, base) != -1)
+	{
+		tmp = ft_match(*str, base);
+		n *= r;
+		n += tmp;
+		str++;
+	}
+	return (n * sign);
+}
+
+
+int		ft_match(char c, char *base)
+{
+	int i;
+
+	while (base[i] != 0)
+	{
+		if (c == base[i])
+			return (i);
+		i++;
+	}
+	return (-1);
 }
 
 int		invalid_base(char *base)
@@ -97,10 +117,3 @@ int		ft_sign(char c)
 		return (0);
 }
 
-int		ft_num(char c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
-}
