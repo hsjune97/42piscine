@@ -6,12 +6,11 @@
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 17:24:01 by seougjun          #+#    #+#             */
-/*   Updated: 2020/08/18 02:19:26 by seongjun         ###   ########.fr       */
+/*   Updated: 2020/08/18 02:32:53 by seongjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 int		ft_len(char *str)
 {
@@ -115,4 +114,3 @@ int		ft_atoi_base(char *str, char *base)
 	}
 	return (n * sign);
 }
-
