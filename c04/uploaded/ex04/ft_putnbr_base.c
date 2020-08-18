@@ -6,7 +6,7 @@
 /*   By: seougjun <seougjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 08:52:50 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/18 18:23:17 by seougjun         ###   ########.fr       */
+/*   Updated: 2020/08/18 18:41:55 by seougjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int		is_invalid_base(char *base)
 
 	i = -1;
 	curr = base;
-	if (base == 0 || ft_strlen(base) == 1)
+	if (*base == 0 || ft_strlen(base) == 1)
 		return (1);
 	while (base[++i] != 0)
 	{

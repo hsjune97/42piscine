@@ -1,0 +1,5 @@
+ex04
+
+is_invalid_base
+
+base == 0 -> *base == 0
