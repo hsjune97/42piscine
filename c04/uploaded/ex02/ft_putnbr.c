@@ -6,7 +6,7 @@
 /*   By: seougjun <seougjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 23:50:58 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/18 12:27:00 by sehwang          ###   ########.fr       */
+/*   Updated: 2020/08/18 18:17:27 by seougjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,10 @@ void	ft_putnbr(int n)
 			ft_putnbr(n / 10);
 		ft_putchar(48 + n % 10);
 	}
+}
+
+int		main(void)
+{
+	ft_putnbr(-2147483648);
+	return (0);
 }

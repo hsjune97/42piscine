@@ -6,9 +6,11 @@
 /*   By: seougjun <seougjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 07:22:27 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/18 12:28:59 by sehwang          ###   ########.fr       */
+/*   Updated: 2020/08/18 18:20:22 by seougjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 int		ft_space(char c);
 int		ft_sign(char c);
@@ -77,4 +79,18 @@ int		ft_num(char c)
 	{
 		return (0);
 	}
+}
+
+int main(void)
+
+{
+
+char *str;
+
+
+
+str = " ---+--+1234ab567";
+
+printf("%d\n", ft_atoi(str));
+
 }

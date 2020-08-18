@@ -3,13 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seougjun <seougjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 17:24:01 by seougjun          #+#    #+#             */
-/*   Updated: 2020/08/18 14:05:50 by sehwang          ###   ########.fr       */
+/*   Updated: 2020/08/18 18:27:05 by seougjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+
+
+#include <unistd.h>
+
+#include <stdbool.h>
+
+#include <stdio.h>
 #include <unistd.h>
 
 int		ft_len(char *str)
@@ -101,4 +109,22 @@ int		ft_atoi_base(char *str, char *base)
 		str++;
 	}
 	return (n * sign);
+}
+
+int main(void)
+
+{
+
+printf("%d\n", ft_atoi_base("-123456", "0123456789"));
+
+fflush(stdout);
+
+printf("%d\n", ft_atoi_base("11110001001000000", "01"));
+
+fflush(stdout);
+
+printf("%d\n", ft_atoi_base("-1e240", "0123456789abcdef"));
+
+fflush(stdout);
+
 }

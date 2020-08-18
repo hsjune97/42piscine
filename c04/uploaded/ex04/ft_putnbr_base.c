@@ -6,10 +6,18 @@
 /*   By: seougjun <seougjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 08:52:50 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/18 14:06:51 by sehwang          ###   ########.fr       */
+/*   Updated: 2020/08/18 18:23:17 by seougjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#include <unistd.h>
+
+#include <stdbool.h>
+
+#include <stdio.h>
+
+#include <limits.h>
 #include <unistd.h>
 
 int		is_invalid_base(char *base);
@@ -89,3 +97,24 @@ int		ft_strlen(char *str)
 	}
 	return (cur);
 }
+
+int main(void)
+
+{
+
+ft_putnbr_base(-123456, "helo");
+
+printf("\n");
+
+fflush(stdout);
+
+ft_putnbr_base(INT_MIN, "0123456789");
+
+printf("\n");
+
+fflush(stdout);
+
+ft_putnbr_base(INT_MAX, "0123456789");
+
+}
+
