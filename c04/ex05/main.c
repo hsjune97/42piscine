@@ -1,33 +1,24 @@
-#include <stdio.h>
 #include <string.h>
-
-
 #include <unistd.h>
-
-#include <stdbool.h>
-
 #include <stdio.h>
-
 #include <limits.h>
-
-#define NO_MATCH -1 
 
 int ft_atoi_base(char *str, char *base);
 
-int main(void) 
+int main(void)
 
-{ 
+{
 
-printf("%d\n", ft_atoi_base("-123456", "0123456789")); 
+printf("%d\n", ft_atoi_base("-123456", "0123456789"));
 
-fflush(stdout); 
+// fflush(stdout);
 
-printf("%d\n", ft_atoi_base("11110001001000000", "01")); 
+printf("%d\n", ft_atoi_base("11110001001000000", "01"));
 
-fflush(stdout); 
+// fflush(stdout);
 
-printf("%d\n", ft_atoi_base("-1e240", "0123456789abcdef")); 
+printf("%d\n", ft_atoi_base("-1e240", "0123456789abcdef"));
 
-fflush(stdout); 
-
-} 
+// fflush(stdout);
+	return (0);
+}
