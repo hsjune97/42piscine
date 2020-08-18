@@ -6,18 +6,18 @@
 /*   By: seougjun <seougjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/13 23:50:58 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/17 16:53:38 by seougjun         ###   ########.fr       */
+/*   Updated: 2020/08/18 12:27:00 by sehwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void ft_putnbr(int n)
+void	ft_putnbr(int n)
 {
 	if (n == -2147483648)
 	{

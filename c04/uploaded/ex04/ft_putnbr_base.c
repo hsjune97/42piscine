@@ -6,7 +6,7 @@
 /*   By: seougjun <seougjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 08:52:50 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/17 17:22:23 by seougjun         ###   ########.fr       */
+/*   Updated: 2020/08/18 14:06:51 by sehwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ void	ft_putnbr_base_recursive(int n, char *base, int r)
 {
 	if (n == -2147483648)
 	{
-		ft_putnbr_base_recursive(n/r, base, r);
-		write(1, &(base[-(n%r)]), 1);
+		ft_putnbr_base_recursive(n / r, base, r);
+		write(1, &(base[-(n % r)]), 1);
 	}
 	else
 	{
@@ -43,32 +43,30 @@ void	ft_putnbr_base_recursive(int n, char *base, int r)
 			write(1, "-", 1);
 			n = -n;
 		}
-		if (n > r -1)
-			ft_putnbr_base_recursive(n/r, base, r);
-		write(1, &(base[n%r]), 1);
+		if (n > r - 1)
+			ft_putnbr_base_recursive(n / r, base, r);
+		write(1, &(base[n % r]), 1);
 	}
 }
 
 int		is_invalid_base(char *base)
 {
-	int i;
-	int j;
-	char *curr;
+	int		i;
+	int		j;
+	char	*curr;
 
-	i = 0;
+	i = -1;
 	curr = base;
 	if (base == 0 || ft_strlen(base) == 1)
 		return (1);
-	while (base[i] != 0)
+	while (base[++i] != 0)
 	{
-		j = i + 1;
-		while (j < ft_strlen(base))
+		j = i;
+		while (++j < ft_strlen(base))
 		{
 			if (base[i] == base[j])
 				return (1);
-			j++;
 		}
-		i++;
 	}
 	while (*curr != 0)
 	{
@@ -79,7 +77,6 @@ int		is_invalid_base(char *base)
 	}
 	return (0);
 }
-
 
 int		ft_strlen(char *str)
 {
