@@ -1,7 +1,14 @@
-#include <stdbool.h>
-#include <stdio.h>
-#include <limits.h>
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/19 15:02:08 by seongjun          #+#    #+#             */
+/*   Updated: 2020/08/19 15:02:10 by seongjun         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 int		ft_is_prime(int nb)
 {
@@ -18,28 +25,12 @@ int		ft_is_prime(int nb)
 	return (1);
 }
 
-
-
-int main(void)
-
+int		ft_find_next_prime(int nb)
 {
-
-int index;
-
-
-
-index = -2;
-
-while (index < 100)
-
-{
-
-printf("find_next_prime(%d) = %d\n", index, ft_find_next_prime(index));
-
-index++;
-
-}
-
-printf("find_next_prime(%d) = %d\n", INT_MAX, ft_find_next_prime(INT_MAX));
-
+	while (1)
+	{
+		if (ft_is_prime(nb) != 0)
+			return nb;
+		nb++;
+	}
 }

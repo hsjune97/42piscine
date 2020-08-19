@@ -6,20 +6,16 @@
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/19 10:26:57 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/19 10:27:05 by seongjun         ###   ########.fr       */
+/*   Updated: 2020/08/19 14:56:38 by seongjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_sqrt(int nb)
 {
-	int x;
+	long long x;
 
 	x = 0;
-	if (nb < 0)
-		return (0);
-	if (nb == 1)
-		return (1);
-	while (++x < nb)
+	while (++x <= nb)
 	{
 		if (x * x == nb)
 			return (x);

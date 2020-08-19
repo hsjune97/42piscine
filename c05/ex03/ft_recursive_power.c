@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seougjun <seougjun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/18 20:20:39 by seougjun          #+#    #+#             */
-/*   Updated: 2020/08/18 20:20:47 by seougjun         ###   ########.fr       */
+/*   Updated: 2020/08/19 14:45:51 by seongjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_recursive_power(int nb, int power)
 {
-	if (nb < 0 || power < 0)
+	if (power < 0)
 		return (0);
 	if (power == 0)
 		return (1);

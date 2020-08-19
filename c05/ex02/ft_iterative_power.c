@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seougjun <seougjun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/18 19:56:06 by seougjun          #+#    #+#             */
-/*   Updated: 2020/08/18 20:18:07 by seougjun         ###   ########.fr       */
+/*   Updated: 2020/08/19 14:45:12 by seongjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_power(int nb, int power)
+int		ft_iterative_power(int nb, int power) ///  unsign
 {
 	int tmp;
 
 	tmp = nb;
-	if (nb < 0 || power < 0)
+	if (power < 0)
 		return (0);
 	if (power == 0)
 		return (1);
