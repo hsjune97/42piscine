@@ -6,7 +6,7 @@
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/19 17:58:29 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/19 19:14:21 by seongjun         ###   ########.fr       */
+/*   Updated: 2020/08/19 22:41:56 by sehwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_putstr(char *str)
 
 int		main(int argc, char *argv[])
 {
-	if(argc > 0)
+	if (argc > 0)
 		ft_putstr(argv[0]);
 	write(1, "\n", 1);
 	return (0);

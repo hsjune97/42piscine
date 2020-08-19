@@ -6,7 +6,7 @@
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/19 21:32:17 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/19 21:33:01 by seongjun         ###   ########.fr       */
+/*   Updated: 2020/08/19 22:44:56 by sehwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int		ft_strcmp(char *str1, char *str2)
 	}
 	return (*(unsigned char*)str1 - *(unsigned char*)str2);
 }
-
 
 int		main(int argc, char **argv)
 {
