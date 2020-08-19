@@ -1,23 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/18 19:56:06 by seougjun          #+#    #+#             */
-/*   Updated: 2020/08/19 21:59:31 by seongjun         ###   ########.fr       */
+/*   Created: 2020/08/19 19:19:27 by seongjun          #+#    #+#             */
+/*   Updated: 2020/08/19 19:19:31 by seongjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_power(int nb, int power)
-{
-	int ret;
+#include <unistd.h>
 
-	if (power < 0)
-		return (0);
-	ret = 1;
-	while (power-- > 0)
-		ret *= nb;
-	return (ret);
+void	ft_putstr(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+}
+
+int		main(int argc, char **argv)
+{
+	int i;
+
+	i = argc;
+	if (argc > 0)
+	{
+		while (--i > 0)
+		{
+			ft_putstr(argv[i]);
+			ft_putstr("\n");
+		}
+	}
+	return (0);
 }

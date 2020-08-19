@@ -6,7 +6,7 @@
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/19 15:02:08 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/19 17:52:54 by seongjun         ###   ########.fr       */
+/*   Updated: 2020/08/19 22:30:29 by seongjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_is_prime(int nb)
 		return (1);
 	else if (nb % 2 == 0 || nb % 3 == 0)
 		return (0);
-	while (++i <= nb / 2)
+	while (++i <= nb / 2 && i <= 65536)
 	{
 		if (nb % i == 0)
 			return (0);
