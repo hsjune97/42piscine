@@ -6,11 +6,11 @@
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/18 19:56:06 by seougjun          #+#    #+#             */
-/*   Updated: 2020/08/19 14:45:12 by seongjun         ###   ########.fr       */
+/*   Updated: 2020/08/19 16:13:02 by seongjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_power(int nb, int power) ///  unsign
+int		ft_iterative_power(int nb, int power)
 {
 	int tmp;
 

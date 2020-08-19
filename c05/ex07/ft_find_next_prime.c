@@ -6,7 +6,7 @@
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/19 15:02:08 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/19 15:02:10 by seongjun         ###   ########.fr       */
+/*   Updated: 2020/08/19 17:52:54 by seongjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@ int		ft_is_prime(int nb)
 {
 	int i;
 
-	i = 1;
+	i = 2;
 	if (nb < 2)
+		return (0);
+	if (nb == 2 || nb == 3)
+		return (1);
+	else if (nb % 2 == 0 || nb % 3 == 0)
 		return (0);
 	while (++i <= nb / 2)
 	{
@@ -30,7 +34,7 @@ int		ft_find_next_prime(int nb)
 	while (1)
 	{
 		if (ft_is_prime(nb) != 0)
-			return nb;
+			return (nb);
 		nb++;
 	}
 }
