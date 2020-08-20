@@ -6,3 +6,23 @@ ex03:
 	}
 
 //////////////////////////////////////////////////////////////////
+
+ex05
+
+1.
+	rtn = (char **)malloc(sizeof(char*) * ft_cnt_strs(*str, charset) );
+	if (!rtn)
+		return (0)
+don't forget!
+
+2.
+	while (*str) /////
+	{
+		if (is_in_set(*str, charset) == 0)
+		{
+			n++;
+			while (is_in_set(*str, charset) == 0 && *str)
+				str++;
+		}
+		str++;
+	}
