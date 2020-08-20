@@ -6,7 +6,7 @@
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 21:15:40 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/21 03:12:45 by seongjun         ###   ########.fr       */
+/*   Updated: 2020/08/21 07:14:50 by sehwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@ void	*ft_putnbr_base(int nbr, char *base);
 
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
-	int 	sign;
-	int		tmp;
-	int		n;
+	int	sign;
+	int	tmp;
+	int	n;
 
 	if (invalid_base(base_from) == 1 || invalid_base(base_to) == 1)
 		return ((char*)0);
-	while (*nbr == ' ' || *nbr == '\t' || *nbr == '\n' || *nbr == '\v' || *nbr == '\f' || *nbr == '\r')
+	while (*nbr == ' ' || *nbr == '\t' || *nbr == '\n' ||
+			*nbr == '\v' || *nbr == '\f' || *nbr == '\r')
 		nbr++;
 	sign = 1;
 	while (*nbr == '+' || *nbr == '-')
@@ -62,7 +63,7 @@ int		invalid_base(char *base)
 	int i;
 	int j;
 
-	i = - 1;
+	i = -1;
 	if (*base == 0 || ft_strlen(base) == 1)
 		return (1);
 	while (base[++i] != 0)
@@ -74,7 +75,7 @@ int		invalid_base(char *base)
 				return (1);
 		}
 	}
-	i = - 1;
+	i = -1;
 	while (base[++i] != 0)
 	{
 		if (base[i] == ' ' || base[i] == '+' ||
@@ -104,7 +105,7 @@ void	*ft_putnbr_base(int nbr, char *base)
 {
 	char	*rtn;
 	int		tmp;
-	int 	size;
+	int		size;
 	int		i;
 
 	size = 0;

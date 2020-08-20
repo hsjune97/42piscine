@@ -6,7 +6,7 @@
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 00:42:45 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/21 00:42:49 by seongjun         ###   ########.fr       */
+/*   Updated: 2020/08/21 07:15:54 by sehwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		is_in_set(char c, char *set)
 	int i;
 
 	i = -1;
-	while (set [++i] != 0)
+	while (set[++i] != 0)
 	{
 		if (set[i] == c)
 			return (1);

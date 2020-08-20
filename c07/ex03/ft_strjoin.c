@@ -6,7 +6,7 @@
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 17:27:53 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/21 00:44:35 by seongjun         ###   ########.fr       */
+/*   Updated: 2020/08/21 07:07:40 by sehwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strjoin(int size, char **str, char *sep)
 		len_sum += ft_strlen(str[i]);
 	}
 	ret_str = (char*)malloc(sizeof(char) * len_sum + 1);
-	if (!ret_str)
+	if(!ret_str)
 		return (0);
 	ptr = ft_strcat(ret_str, str[0]);
 	i = 1;
@@ -50,7 +50,7 @@ int		ft_strlen(char *str)
 	int i;
 
 	i = 0;
-	while(str[i] != 0)
+	while (str[i] != 0)
 		i++;
 	return (i);
 }

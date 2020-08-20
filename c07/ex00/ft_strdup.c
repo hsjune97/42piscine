@@ -6,7 +6,7 @@
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 08:27:58 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/20 08:28:00 by seongjun         ###   ########.fr       */
+/*   Updated: 2020/08/21 07:01:11 by sehwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int		ft_strlen(char *str);
 
 char	*ft_strdup(char *src)
 {
-	char *dest;
-	int i;
+	char	*dest;
+	int		i;
 
 	i = 0;
 	dest = (char*)malloc(sizeof(char) * ft_strlen(src) + 1);
