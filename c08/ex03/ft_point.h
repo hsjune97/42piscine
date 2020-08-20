@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/20 08:49:06 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/21 03:02:57 by seongjun         ###   ########.fr       */
+/*   Created: 2020/08/21 02:14:14 by seongjun          #+#    #+#             */
+/*   Updated: 2020/08/21 02:14:18 by seongjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef FT_POINT_H
+# define FT_POINT_H
 
-int		*ft_range(int min, int max)
+typedef struct s_point
 {
-	int i;
-	int *range;
+	int	x;
+	int y;
+} t_point;
 
-	if (min >= max)
-		return (0);
-	range = (int*)malloc(sizeof(int) * (max - min) + 1);
-	if (!range)
-		return (0);
-	i = -1;
-	while (max > min + ++i)
-	{
-		range[i] = min + i;
-	}
-	return (range);
-}
+#endif

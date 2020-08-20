@@ -6,7 +6,7 @@
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 12:46:20 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/20 12:46:22 by seongjun         ###   ########.fr       */
+/*   Updated: 2020/08/21 03:12:47 by seongjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_ultimate_range(int **range, int min, int max)
 		*range = 0;
 		return (0);
 	}
-	buff = (int*)malloc(sizeof(int) * (max - min));
+	buff = (int*)malloc(sizeof(int) * (max - min) + 1);
 	if (buff == NULL)
 		return (-1);
 	*range = buff;
