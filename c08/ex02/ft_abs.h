@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sehwang <hsjung97@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/21 01:39:47 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/21 01:41:35 by seongjun         ###   ########.fr       */
+/*   Created: 2020/08/21 07:59:10 by sehwang           #+#    #+#             */
+/*   Updated: 2020/08/21 07:59:17 by sehwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifdef FT_ABS_H
+#ifndef FT_ABS_H
 # define FT_ABS_H
-
 # define ABS(Value) (Value < 0 ? -Value : Value)
-
 #endif

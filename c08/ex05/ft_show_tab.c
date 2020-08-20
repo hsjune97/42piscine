@@ -6,7 +6,7 @@
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 03:33:39 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/21 03:45:27 by seongjun         ###   ########.fr       */
+/*   Updated: 2020/08/21 07:50:08 by sehwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_putchar(char c)
 
 void	ft_putstr(char *str)
 {
-	int  i;
+	int i;
 
 	i = -1;
 	while (str[++i] != 0)
@@ -52,7 +52,7 @@ void	ft_putnbr(int n)
 	}
 }
 
-void		ft_show_tab(struct s_stock_str *par)
+void	ft_show_tab(struct s_stock_str *par)
 {
 	while (par->str)
 	{

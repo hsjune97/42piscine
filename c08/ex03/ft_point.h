@@ -6,17 +6,17 @@
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 02:14:14 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/21 02:14:18 by seongjun         ###   ########.fr       */
+/*   Updated: 2020/08/21 07:28:13 by sehwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_POINT_H
 # define FT_POINT_H
 
-typedef struct s_point
+typedef struct	s_point
 {
 	int	x;
 	int y;
-} t_point;
+}				t_point;
 
 #endif
