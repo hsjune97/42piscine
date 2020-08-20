@@ -6,7 +6,7 @@
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/19 21:32:17 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/19 22:44:56 by sehwang          ###   ########.fr       */
+/*   Updated: 2020/08/20 12:35:35 by seongjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,13 @@ int		main(int argc, char **argv)
 	int j;
 
 	i = 0;
-	while (++i < argc)
+	while (++i < argc - 1)
 	{
 		j = i;
-		while (++j < argc)
+		while (++j < argc - 1)
 		{
-			if (ft_strcmp(argv[i], argv[i + 1]) > 0)
-				ft_swap(&argv[i], &argv[i + 1]);
+			if (ft_strcmp(argv[j], argv[j + 1]) > 0)
+				ft_swap(&argv[j], &argv[j + 1]);
 		}
 	}
 	i = 0;
