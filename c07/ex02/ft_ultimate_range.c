@@ -1,7 +1,18 @@
-#include <stdlib.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/20 12:46:20 by seongjun          #+#    #+#             */
+/*   Updated: 2020/08/20 12:46:22 by seongjun         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int		*ft_ultimate_range(int **range, int min, int max)
+#include <stdlib.h>
+
+int		ft_ultimate_range(int **range, int min, int max)
 {
 	int i;
 	int *buff;
@@ -14,78 +25,12 @@ int		*ft_ultimate_range(int **range, int min, int max)
 	buff = (int*)malloc(sizeof(int) * (max - min));
 	if (buff == NULL)
 		return (-1);
+	*range = buff;
 	i = 0;
 	while (min + i < max)
 	{
 		buff[i] = min + i;
 		i++;
 	}
-	*range = buff;
 	return (max - min);
-}
-
-
-
-void debug_dump_array(int numbers[], int size)
-
-{
-
-int index;
-
-
-
-printf("[ ");
-
-index = 0;
-
-while (index < size)
-
-{
-
-printf("%d", numbers[index]);
-
-if (index != size - 1)
-
-{
-
-printf(", ");
-
-}
-
-index++;
-
-}
-
-printf(" ]");
-
-}
-
-
-
-int main(void)
-
-{
-
-int min;
-
-int max;
-
-int *range;
-
-int bound;
-
-
-
-min = 5;
-
-max = 10;
-
-bound = ft_ultimate_range(&range, min, max);
-
-printf("min = %d, max = %d -> (bound = %d) ", min, max, bound);
-
-fflush(stdout);
-
-debug_dump_array(range, bound + 2);
-
 }

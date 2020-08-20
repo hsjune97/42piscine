@@ -1,0 +1,8 @@
+ex03:
+	while (++i != size) /// don't use << str[i] != 0 >> style
+	{
+		len_sum += ft_strlen(sep);
+		len_sum += ft_strlen(str[i]);
+	}
+
+//////////////////////////////////////////////////////////////////

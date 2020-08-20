@@ -3,24 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seougjun <seougjun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 17:24:01 by seougjun          #+#    #+#             */
-/*   Updated: 2020/08/18 18:27:05 by seougjun         ###   ########.fr       */
+/*   Updated: 2020/08/20 17:45:43 by seongjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
 #include <unistd.h>
 
-#include <stdbool.h>
-
-#include <stdio.h>
-#include <unistd.h>
-
-int		ft_len(char *str)
+int		ft_strlen(char *str)
 {
 	int i;
 
@@ -36,12 +28,12 @@ int		invalid_base(char *base)
 	int j;
 
 	i = -1;
-	if (*base == 0 || ft_len(base) == 1)
+	if (*base == 0 || ft_strlen(base) == 1)
 		return (1);
 	while (base[++i] != 0)
 	{
 		j = i;
-		while (++j < ft_len(base))
+		while (++j < ft_strlen(base))
 		{
 			if (base[i] == base[j])
 				return (1);
@@ -91,7 +83,7 @@ int		ft_atoi_base(char *str, char *base)
 
 	sign = 1;
 	n = 0;
-	r = ft_len(base);
+	r = ft_strlen(base);
 	if (invalid_base(base) == 1)
 		return (0);
 	while (ft_space(*str) == 1)
@@ -109,22 +101,4 @@ int		ft_atoi_base(char *str, char *base)
 		str++;
 	}
 	return (n * sign);
-}
-
-int main(void)
-
-{
-
-printf("%d\n", ft_atoi_base("-123456", "0123456789"));
-
-fflush(stdout);
-
-printf("%d\n", ft_atoi_base("11110001001000000", "01"));
-
-fflush(stdout);
-
-printf("%d\n", ft_atoi_base("-1e240", "0123456789abcdef"));
-
-fflush(stdout);
-
 }

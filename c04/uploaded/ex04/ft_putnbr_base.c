@@ -3,21 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seougjun <seougjun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 08:52:50 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/18 18:41:55 by seougjun         ###   ########.fr       */
+/*   Updated: 2020/08/20 19:32:57 by seongjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <unistd.h>
-
-#include <stdbool.h>
-
-#include <stdio.h>
-
-#include <limits.h>
 #include <unistd.h>
 
 int		is_invalid_base(char *base);
@@ -57,14 +49,13 @@ void	ft_putnbr_base_recursive(int n, char *base, int r)
 	}
 }
 
-int		is_invalid_base(char *base)
+
+int		invalid_base(char *base)
 {
-	int		i;
-	int		j;
-	char	*curr;
+	int i;
+	int j;
 
 	i = -1;
-	curr = base;
 	if (*base == 0 || ft_strlen(base) == 1)
 		return (1);
 	while (base[++i] != 0)
@@ -76,12 +67,14 @@ int		is_invalid_base(char *base)
 				return (1);
 		}
 	}
-	while (*curr != 0)
+	i = -1;
+	while (base[++i] != 0)
 	{
-		if (*curr == '\t' || *curr == '\n' || *curr == '\v' || *curr == '\f'
-			|| *curr == '\r' || *curr == ' ' || *curr == '+' || *curr == '-')
+		if (base[i] == ' ' || base[i] == '+' ||
+			base[i] == '-' || base[i] == '\t' ||
+			base[i] == '\n' || base[i] == '\v' ||
+			base[i] == '\r' || base[i] == '\f')
 			return (1);
-		curr++;
 	}
 	return (0);
 }
@@ -97,24 +90,3 @@ int		ft_strlen(char *str)
 	}
 	return (cur);
 }
-
-int main(void)
-
-{
-
-ft_putnbr_base(-123456, "helo");
-
-printf("\n");
-
-fflush(stdout);
-
-ft_putnbr_base(INT_MIN, "0123456789");
-
-printf("\n");
-
-fflush(stdout);
-
-ft_putnbr_base(INT_MAX, "0123456789");
-
-}
-
