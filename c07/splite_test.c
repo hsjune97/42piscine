@@ -6,10 +6,15 @@
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 13:51:42 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/21 14:02:54 by seongjun         ###   ########.fr       */
+/*   Updated: 2020/08/21 14:16:54 by seongjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#include <stdlib.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #include <stdlib.h>
 
@@ -74,4 +79,68 @@ char			**ft_split(char *str, char *charset)
 	}
 	result[index] = 0;
 	return (result);
+}
+
+
+
+
+
+
+
+bool	is_char_in_string(char c, char *set)
+{
+	while (true)
+	{
+		if (*set == '\0')
+			return (c == '\0');
+		if (*set == c)
+			return (true);
+		set++;
+	}
+	return (false);
+}
+
+
+int		count_occur(char *str, char *charset)
+{
+	int		count;
+	char	*previous;
+	char	*next;
+
+	count = 0;
+	previous = str;
+	next = str;
+	while (true)
+	{
+		if (is_char_in_string(*str, charset))
+			next = str;
+		if (next - previous > 1)
+			count++;
+		if (*str == '\0')
+			break ;
+		previous = next;
+		str++;
+	}
+	return (count);
+}
+
+
+int		main(int argc, char **argv)
+{
+	int		index;
+	char	**split;
+
+	argc = argc + 0;
+	printf("count occ: %d\n", count_occur("  a  b   b   ", " a   "));
+	//split = ft_split("ImtmVrV6Ov8QrkGGUglBy7Vgsu iIsdl5XyT35Czv4xeu", "yenORYQ");
+	split = ft_split(argv[1], argv[2]);
+	index = 0;
+	printf("tab start\n");
+	while (split[index])
+	{
+		printf("tab[%d]: $%s$\n", index, split[index]);
+		fflush(stdout);
+		index++;
+	}
+	printf("tab end\n");
 }

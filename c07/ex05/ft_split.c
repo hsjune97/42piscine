@@ -6,13 +6,13 @@
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 00:42:45 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/21 14:06:16 by seongjun         ###   ########.fr       */
+/*   Updated: 2020/08/21 14:24:42 by seongjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		is_in_set(char c, char *set)
+int				is_in_set(char c, char *set)
 {
 	int i;
 
@@ -25,7 +25,7 @@ int		is_in_set(char c, char *set)
 	return (0);
 }
 
-unsigned int		ft_cnt_strs(char *str, char *charset)
+unsigned int	ft_cnt_strs(char *str, char *charset)
 {
 	unsigned int n;
 
@@ -50,7 +50,7 @@ void			ft_strcpy(char *dest, char *src, char *str)
 	*dest = '\0';
 }
 
-char	**ft_split(char *str, char *charset)
+char			**ft_split(char *str, char *charset)
 {
 	char			**rtn;
 	char			*sptr;
