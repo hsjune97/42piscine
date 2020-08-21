@@ -6,14 +6,11 @@
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 21:15:40 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/21 11:16:09 by seongjun         ###   ########.fr       */
+/*   Updated: 2020/08/21 11:19:37 by seongjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdbool.h>
 #include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
 
 int		ft_strlen(char *str);
 int		invalid_base(char *base);
@@ -129,15 +126,4 @@ void	*ft_putnbr_base(int nbr, char *base)
 	}
 	rtn[size] = '\0';
 	return (rtn);
-}
-
-
-
-
-int		main(void)
-{
-	printf("result : $%s$\n", ft_convert_base("2147483647", "0123456789", "0123456789abcdef"));
-	printf("result : $%s$\n", ft_convert_base("---------7fffffff", "0123456789abcdef", "01"));
-	printf("result : $%s$\n", ft_convert_base("---+--0001023a", "0123456789", "0123456789"));
-	printf("result : $%s$\n", ft_convert_base("-0", "0123456789", "abcdefghij"));
 }
