@@ -6,7 +6,7 @@
 /*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 21:15:40 by seongjun          #+#    #+#             */
-/*   Updated: 2020/08/21 11:19:37 by seongjun         ###   ########.fr       */
+/*   Updated: 2020/08/21 13:44:06 by seongjun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 		nbr++;
 	}
 	if (n == 0)
-		return ("0");
+		return (base_to[0]);
 	return (ft_putnbr_base(n * sign, base_to));
 }
 

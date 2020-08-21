@@ -1,207 +1,77 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   splite_test.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: seongjun <seongjun@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/21 13:51:42 by seongjun          #+#    #+#             */
+/*   Updated: 2020/08/21 14:02:54 by seongjun         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include <stdlib.h>
-#include <stdbool.h>
-#include <stdio.h>
 
-bool	is_char_in_string(char c, char *set)
+int				is_same_charset(char c, char *charset)
 {
-	while (true)
+	while (*charset != 0)
 	{
-		if (*set == '\0')
-			return (c == '\0');
-		if (*set == c)
-			return (true);
-		set++;
+		if (*charset == c)
+			return (1);
+		charset++;
 	}
-	return (false);
+	return (0);
 }
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+unsigned int	count_word(char *str, char *charset)
 {
-	unsigned int index;
-
-	index = 0;
-	while (index < n && src[index] != '\0')
-	{
-		dest[index] = src[index];
-		index++;
-	}
-	while (index < n)
-	{
-		dest[index] = '\0';
-		index++;
-	}
-	return (dest);
-}
-
-int		count_occur(char *str, char *charset)
-{
-	int		count;
-	char	*previous;
-	char	*next;
+	unsigned int count;
 
 	count = 0;
-	previous = str;
-	next = str;
-	while (true)
+	while (*str != 0)
 	{
-		if (is_char_in_string(*str, charset))
-			next = str;
-		if (next - previous > 1)
+		if (is_same_charset(*str, charset) == 0)
+		{
 			count++;
-		if (*str == '\0')
-			break ;
-		previous = next;
+			while (is_same_charset(*str, charset) == 0 && *str != 0)
+				str++;
+		}
 		str++;
 	}
 	return (count);
 }
 
-int		add_part(char **entry, char *previous, int size, char *charset)
+void			ft_strcpy(char *result, char *temp, char *str)
 {
-	if (is_char_in_string(previous[0], charset))
-	{
-		previous++;
-		size--;
-	}
-	*entry = (char *)malloc((size + 3) * sizeof(char));
-	ft_strncpy(*entry, previous, size);
-	(*entry)[size] = '\0';
-	(*entry)[size + 1] = '\0';
-	return (1);
+	while (temp < str)
+		*result++ = *temp++;
+	*result = '\0';
 }
 
-//char	**ft_split(char *str, char *charset)
-//{
-//	int		index;
-//	int		size;
-//	char	*previous;
-//	char	*next;
-//	char	**array;
-
-//	array = (char **)malloc((count_occur(str, charset) + 1) * sizeof(char *));
-//	index = 0;
-//	previous = str;
-//	next = str;
-//	while (true)
-//	{
-//		if (is_char_in_string(*str, charset))
-//			next = str;
-//		if ((size = next - previous) > 1)
-//			index += add_part(&array[index], previous, size, charset);
-//		if (*str == '\0')
-//			break ;
-//		previous = next;
-//		str++;
-//	}
-//	array[index] = 0;
-//	return (array);
-//}
-
-
-
-
-
-
-
-
-
-
-
-
-int			ft_charset(char c, char *charset)
+char			**ft_split(char *str, char *charset)
 {
-	while (*charset)
-	{
-		if (c == *charset)
-			return (1);
-		++charset;
-	}
-	return (0);
-}
+	char			**result;
+	char			*temp;
+	unsigned int	w_num;
+	unsigned int	index;
 
-int			ft_word_cnt(char *str, char *charset)
-{
-	int cnt;
-
-	cnt = 0;
-	while (*str)
-	{
-		if (!ft_charset(*str, charset))
-		{
-			++cnt;
-			while (*str && !ft_charset(*str, charset))
-				++str;
-		}
-		++str;
-	}
-	return (cnt);
-}
-
-void		ft_strcpy(char *dest, char *src, char *strs)
-{
-	while (src < strs)
-		*(dest++) = *(src++);
-	*dest = 0;
-}
-
-char		**ft_split(char *str, char *charset)
-{
-	char		**res;
-	char		*dest;
-	long long	i;
-
-	res = (char**)malloc(sizeof(char*) * ft_word_cnt(str, charset) + 1);
-	if (!res)
-		return (0);
-	i = 0;
-	while (*str)
-	{
-		if (!ft_charset(*str, charset))
-		{
-			dest = str;
-			while (*str && !ft_charset(*str, charset))
-				++str;
-			res[i] = (char*)malloc(str - dest + 1);
-			ft_strcpy(res[i++], dest, str);
-		}
-		++str;
-	}
-	res[i] = 0;
-	return (res);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-int		main()//int argc, char **argv
-{
-	int		index;
-	char	**split;
-
-	//argc = argc + 0;
-	//printf("count occ: %d\n", count_occur("  a  b   b   ", " a   "));
-	split = ft_split("ImtmVrV6Ov8QrkGGUglBy7Vgsu iIsdl5XyT35Czv4xeu", "yenORYQ");
-	//split = ft_split(argv[1], argv[2]);
 	index = 0;
-	printf("tab start\n");
-	while (split[index])
+	w_num = count_word(str, charset);
+	result = (char**)malloc(sizeof(char*) * (w_num + 1));
+	while (*str != 0)
 	{
-		printf("tab[%d]: $%s$\n", index, split[index]);
-		fflush(stdout);
-		index++;
+		if (is_same_charset(*str, charset) == 0)
+		{
+			temp = str;
+			while (is_same_charset(*str, charset) == 0 && *str != 0)
+				str++;
+			result[index] = (char*)malloc(sizeof(char) * (str - temp + 1));
+			ft_strcpy(result[index], temp, str);
+			index++;
+		}
+		str++;
 	}
-	printf("tab end\n");
+	result[index] = 0;
+	return (result);
 }
