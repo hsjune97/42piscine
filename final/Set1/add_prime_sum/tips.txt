@@ -1,0 +1,2 @@
+advice
+- try "ft_next_prime.c"

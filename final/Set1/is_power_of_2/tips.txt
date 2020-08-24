@@ -1,0 +1,4 @@
+cautions!
+- 2^0 = 1
+- 0 is not power of 2
+- unsigned int

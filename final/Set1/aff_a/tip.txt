@@ -1,0 +1,2 @@
+Make the code easy apac
+- do not put extra function in easy one

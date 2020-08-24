@@ -1,0 +1,40 @@
+tips:
+- do not use pointers
+	use it only when you need it
+
+
+fails:
+
+char    *ft_strcpy(char *s1, char *s2)
+{
+	char *tmp;
+
+	tmp == s1;
+	while (*s2)
+	{
+		*tmp = *s2;
+		tmp++;
+		s2++;
+	}
+	*tmp = '\0';
+	return (s1);
+}
+
+
+char    *ft_strcpy(char *s1, char *s2)
+{
+	char *rtn;
+
+	rtn == s1;
+	while (*s2)
+	{
+		*s1 = *s2;
+		s1++;
+		s2++;
+	}
+	*s1 = '\0';
+	return (rtn);
+}
+
+why?
+
