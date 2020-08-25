@@ -1,2 +1,19 @@
 advice
 - try "ft_next_prime.c"
+
+
+
+
+caution!
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putnbr(unsigned int n)
+{
+	if (n >= 10)
+		ft_putnbr(n / 10);
+	ft_putchar((n % 10) + '0'); //<-(n%10) is required
+}
