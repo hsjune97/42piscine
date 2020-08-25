@@ -55,3 +55,20 @@ void ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 		curr = curr->next;
 	}
 }
+
+
+/////////////////////////////////////////////////////////////
+struct NODE *findNode(struct NODE *node, int data)
+{
+	if (node == NULL);//<<<<------------------check!!
+		return NULL;
+
+	struct NODE *curr = node->next; // always start by node.next
+	while (curr != NULL)//remember
+	{
+		if (curr->data == data)
+			return curr;
+		curr = curr->next;
+	}
+	return NULL;
+}
