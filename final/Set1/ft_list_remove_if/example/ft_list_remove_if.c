@@ -12,62 +12,36 @@ int cmp(void *data, void *data_ref)
 	return (1);
 }
 
-void ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
+void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 {
 	t_list *curr;
 	t_list *tmp;
-
-	// while (*begin_list && cmp((*begin_list)->data, data_ref) == 0)
-	// {
-	// 	//curr = *begin_list;
-	// 	*begin_list = (*begin_list)->next;
-	// 	//free(curr);
-	// }
-	curr = *begin_list;
-	while (curr && curr->next)
-	{
-		if (cmp(curr->next->data, data_ref) == 0)
-		{
-			tmp = curr->next;
-			curr->next = tmp->next;
-			free(tmp);
-		}
-		curr = curr->next;
-	}
-}
-
-
-
-void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
-{
-	t_list *lst;
-	t_list *tmp;
 	int i = 0;
 
-	if (begin_list == NULL || *begin_list == NULL)
+	if (begin_list == NULL || *begin_list == NULL)//???
 		return ;
 	tmp = *begin_list;
-	while ((*cmp)((*begin_list)->data, data_ref) == 0)
+	while ((*cmp)((*begin_list)->data, data_ref) == 0)//on heads
 	{
 		tmp = (*begin_list)->next;
 		free(*begin_list);
 		(*begin_list) = tmp;
 	}
-	lst = *begin_list;
+	curr = *begin_list;
 	tmp = *begin_list;
-	while (lst != NULL)
+	while (curr != NULL)
 	{
-		if ((*cmp)(lst->data, data_ref) == 0)
+		if ((*cmp)(curr->data, data_ref) == 0)
 		{
-			tmp->next = lst->next;
-			free(lst);
-			lst = tmp;
+			tmp->next = curr->next;
+			free(curr);
+			curr = tmp;
 			i = 0;
 		}
 		if (i > 0)
 			tmp = tmp->next;
-		if (lst != NULL)
-			lst = lst->next;
+		if (curr != NULL)
+			curr = curr->next;
 		i++;
 	}
 }
@@ -79,8 +53,9 @@ int main(void)
 	t_list *lst;
 	int i = 1;
 	int j = 2;
-	int k = 3;
+	int k = 2;
 	int l = 4;
+	int t = 2;
 
 	lst = (t_list*)malloc(sizeof(t_list));
 	lst->data = &i;
@@ -92,7 +67,7 @@ int main(void)
 	lst->next->next->next->data = &l;
 	lst->next->next->next->next =  NULL;
 
-	ft_list_remove_if(&lst, &j, cmp);
+	ft_list_remove_if(&lst, &t, cmp);
 
 	while (lst != NULL)
 	{

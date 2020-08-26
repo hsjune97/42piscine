@@ -1,0 +1,18 @@
+const
+- variable -> constant
+- on pointer
+	- not allow changing pointed address
+	- variable itself could be changed
+- make the code safe and stable.
+
+int main(void)
+{
+	int num1 = 20;
+	int num2 = 30;
+	int *const ptr = &num1;
+	ptr &num2; // #####compile error#####
+	*ptr = 40; // Ok
+}
+
+
+//////////////////////////////////////

@@ -76,3 +76,43 @@ struct NODE *findNode(struct NODE *node, int data)
 diff from findNode or something
 -findNode function is struct type but this one is void type
 -noting to return so need to deal with pointers
+
+
+
+//////////////////////////////////////////////////
+segmentation error
+- while (curr != NULL || curr->next != NULL)
+	- cannot go double
+
+
+////////////////////////////////////////////////////////
+wrong code
+- cannot deal with a case that has two or more targets are serial
+
+
+void ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
+{
+	t_list *curr;
+	t_list *tmp;
+
+	while (*begin_list && cmp((*begin_list)->data, data_ref) == 0)
+	{
+		curr = *begin_list;
+		*begin_list = (*begin_list)->next;
+		free(curr);
+	}
+	curr = *begin_list;
+	while (curr && curr->next)
+	{
+		if (cmp(curr->next->data, data_ref) == 0)
+		{
+			tmp = curr->next;
+			curr->next = tmp->next;
+			free(tmp);
+		}
+		curr = curr->next;
+		//if curr->next(new curr) is target too, it couldn't handled
+		//because the function check only next nodes
+	}
+}
+

@@ -17,12 +17,12 @@ void addFirst(struct NODE *target, int data)
 	target->next = newNode;// change the value with pointer
 }
 
-//void removeFirst(struct NODE *target)
-//{
-//	struct NODE *removeNode = target->next;//delete target next node
-//	target->next = removeNode->next; // disconnet with remove node and connet to remove next node
-//	free(removeNode);
-//}
+void removeFirst(struct NODE *target)
+{
+	struct NODE *removeNode = target->next;//delete target next node
+	target->next = removeNode->next; // disconnet with remove node and connet to remove next node
+	free(removeNode);
+}
 
 struct NODE *findNode(struct NODE *node, int data)
 {
