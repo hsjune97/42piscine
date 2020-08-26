@@ -72,3 +72,7 @@ struct NODE *findNode(struct NODE *node, int data)
 	}
 	return NULL;
 }
+///////////////////////////////////////////////////////////////
+diff from findNode or something
+-findNode function is struct type but this one is void type
+-noting to return so need to deal with pointers
