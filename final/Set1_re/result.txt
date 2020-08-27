@@ -1,0 +1,18 @@
+0. pass
+
+1.fail -> pass
+
+char *str1 = "hoochoona";
+char str2[] = "hoochoona";
+
+str1은 문자열의 값을 바꿀수가 없고 str2는 값을 바꿀수 있습니다. str1은 문자열 상수의 주소를 받았으니까요.
+때문에 초기화하는 문자열에 대해 앞으로 변경되면 안될 경우 char *str로 초기화를 하고 변경될 예정일 경우 char str[]로 선언하면 됩니다.
+
+2. pass
+
+3. pass
+- while i++
+
+4. fail
+
+5. give up
