@@ -1,0 +1,33 @@
+fails
+
+do not print array like over
+int		main(void)
+{
+	int ary[] = {1,2,3,4,5,6};
+	int i;
+
+	i = -1;
+	while (ary[++i]) // <<<---- use array size instead	while (i < 6)
+		printf("%d ", ary[i]);
+}
+
+
+////////////////////////////////////////
+
+	while (i < size)
+	{
+		list->data = ary[i];
+		if (i != size -1) // like this!
+		{
+			list->next = (t_list*)malloc(sizeof(t_list));
+			list = list->next;
+		}
+		i++;
+	}
+	list = NULL;
+
+	while (curr != NULL)
+	{
+		printf("%d ", curr->data);
+		curr = curr->next;
+	}
