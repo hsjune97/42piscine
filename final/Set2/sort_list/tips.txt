@@ -1,4 +1,7 @@
 fails
+//////////////////////////
+- do not need to change node address
+	- just need to change data in each nodes
 
 do not print array like over
 int		main(void)
