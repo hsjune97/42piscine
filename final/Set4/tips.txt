@@ -1,0 +1,5 @@
+int *ary;
+int size;
+
+size = size0f(ary)/sizeof(int);//Error
+//ary is pointer not array so, don't now how long
