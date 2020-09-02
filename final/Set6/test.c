@@ -22,10 +22,16 @@
 // 	return (r);
 // }
 
-unsigned char reverse_bits(unsigned char b)
+unsigned char   reverse_bits(unsigned char octet)
 {
-	b = (b * 0x0202020202ULL & 0x010884422010ULL) % 0x3ff;
-	return (b);
+    return ((octet >> 7) & 1) |
+        ((octet >> 5) & 2) |
+        ((octet >> 3) & 4) |
+        ((octet >> 1) & 8) |
+        ((octet << 7) & 128) |
+        ((octet << 5) & 64) |
+        ((octet << 3) & 32) |
+        ((octet << 1) & 16);
 }
 
 int	main(void)
