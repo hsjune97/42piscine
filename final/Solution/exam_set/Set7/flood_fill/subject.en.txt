@@ -9,9 +9,12 @@ by replacing characters inside by the character 'F'. A zone is an ensemble of
 the same character delimitated horizontally and vertically by other characters.
 The flood_fill function won't 'color' in diagonal.
 The flood_fill function will be prototyped like this:
+
 void  flood_fill(char **tab, t_point size, t_point begin);
+
 The t_point structure is available inside the "t_point.h" file attached to this
 assignment. We will use our "t_point.h" for graduation.
+
 Example :
 $> cat test_main.c
 #include "test_functions.h"
@@ -41,6 +44,7 @@ $> gcc flood_fill.c test_main.c test_functions.c -o flood_fill ; ./flood_fill
 1 0 0 1 0 0 0 1
 1 0 1 1 0 0 0 1
 1 1 1 0 0 0 0 1
+
 1 1 1 1 1 1 1 1
 1 F F F 1 0 0 1
 1 F F 1 0 0 0 1
