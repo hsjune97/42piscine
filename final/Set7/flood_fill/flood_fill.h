@@ -1,8 +1,2 @@
-#ifndef FLOOD_FILL
-# define FLOOD_FILL
-typedef struct s_point
-{
-	int x;
-	int y;
-}				t_point;
-#endif
+#include "t_point.h"
+void    flood_fill(char **tab, t_point size, t_point begin);
