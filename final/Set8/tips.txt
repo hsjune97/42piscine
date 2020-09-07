@@ -1,0 +1,18 @@
+fprime
+- recursive display in reverse way
+	- it means, when you put numbers desending, the function display them asending order.
+- subject require positive int
+	- need to use unsigned int
+
+from the bottom and use ? operator
+
+int		is_prime(int n)
+{
+	int x;
+	if (n == 0 || n == 1)
+		return (0);
+	x = 2;
+	while (n % x != 0)//definition
+		x++;
+	return(n == x ? 1 : 0);
+}
